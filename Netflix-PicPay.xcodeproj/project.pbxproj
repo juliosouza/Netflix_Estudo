@@ -52,7 +52,6 @@
 				9106CD3021558B1E122FDDD8 /* Pods-Netflix-PicPay.debug.xcconfig */,
 				1149DD7C74137EC58BAAA045 /* Pods-Netflix-PicPay.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,17 +76,25 @@
 		5D614E17293AF870005FB9EC /* Netflix-PicPay */ = {
 			isa = PBXGroup;
 			children = (
+				5DD4BDB4294A4DEA00165F1A /* Resources */,
 				5D614E18293AF870005FB9EC /* AppDelegate.swift */,
 				5D614E1A293AF870005FB9EC /* SceneDelegate.swift */,
 				5D614E1C293AF870005FB9EC /* ViewController.swift */,
-				5D614E21293AF873005FB9EC /* Assets.xcassets */,
-				5D614E23293AF873005FB9EC /* LaunchScreen.storyboard */,
-				5D614E26293AF873005FB9EC /* Info.plist */,
 				5D614E2C293AFBC1005FB9EC /* MainCoordinator.swift */,
 				5D614E2E293AFC3A005FB9EC /* Coordinator.swift */,
 				5D614E30293AFE0A005FB9EC /* LoginViewController.swift */,
 			);
 			path = "Netflix-PicPay";
+			sourceTree = "<group>";
+		};
+		5DD4BDB4294A4DEA00165F1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D614E21293AF873005FB9EC /* Assets.xcassets */,
+				5D614E23293AF873005FB9EC /* LaunchScreen.storyboard */,
+				5D614E26293AF873005FB9EC /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A4B48CB30301183365800F00 /* Frameworks */ = {
@@ -361,7 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZXKH43MXR4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Netflix-PicPay/Info.plist";
+				INFOPLIST_FILE = "Netflix-PicPay/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -389,7 +396,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZXKH43MXR4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Netflix-PicPay/Info.plist";
+				INFOPLIST_FILE = "Netflix-PicPay/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -6,7 +6,7 @@ final class LoginViewController: UIViewController {
     
     private lazy var loginLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 10
         view.text = "Usuário"
         view.textAlignment = .center
         view.backgroundColor = UIColor(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
@@ -41,16 +41,15 @@ final class LoginViewController: UIViewController {
         return view
     }()
     
+    private let stackView: UIStackView = {
+            let view = UIStackView()
+            view.distribution = .equalSpacing
+            view.spacing = 8
+            view.axis = .vertical
+            view.alignment = .fill
+            return view
+        }()
     
-    
-    private lazy var helloLabel: UILabel = {
-        let label = UILabel()
-       
-        label.text = "Hello world!"
-        label.font = UIFont.systemFont(ofSize: 22)
-        label.textColor = UIColor.black
-        return label
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,37 +60,34 @@ final class LoginViewController: UIViewController {
     }
     
     private func addSubViews() {
-//        view.addSubview(helloLabel)
-
-        view.addSubview(loginLabel)
-        view.addSubview(passwordLabel)
-//        view.addSubview(loginTextField)
-//        view.addSubview(passwordTextField)
-//        view.addSubview(loginButton)
+        stackView.addArrangedSubview(loginLabel)
+        stackView.addArrangedSubview(loginTextField)
+        stackView.addArrangedSubview(passwordLabel)
+        stackView.addArrangedSubview(passwordTextField)
+        stackView.addArrangedSubview(loginButton)
+        view.addSubview(stackView)
     }
     
     private func addContraints() {
-//        helloLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        helloLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            
+        }
         
-//        helloLabel.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.centerY.equalToSuperview()
+//        loginLabel.snp.makeConstraints { make in
+//            make.centerY.equalToSuperview().inset(100)
+//            make.left.equalToSuperview().offset(10)
+//            make.right.equalToSuperview().inset(10)
+//            make.height.equalTo(40)
 //        }
         
-        loginLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().inset(100)
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview().inset(10)
-            make.height.equalTo(40)
-        }
-        
-        passwordLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().inset(100)
-            make.right.equalToSuperview().inset(10)
-            make.left.equalToSuperview().offset(10)
-            make.width.equalTo(loginLabel.snp.bottom)
-            make.height.equalTo(40)
-        }
+//        passwordLabel.snp.makeConstraints { make in
+//            make.centerY.equalToSuperview().inset(100)
+//            make.right.equalToSuperview().inset(10)
+//            make.left.equalToSuperview().offset(10)
+////            make.width.equalTo(loginLabel.snp.bottom)
+//            make.height.equalTo(40)
+//        }
     }
 }
