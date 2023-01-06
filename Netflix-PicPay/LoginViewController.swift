@@ -28,16 +28,31 @@ final class LoginViewController: UIViewController {
     
     private lazy var loginTextField: UITextField = {
         let view = UITextField(frame: .zero)
+        view.backgroundColor =  UIColor(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 0.25)
+        view.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        view.placeholder = "Digite o usuário..."
+        view.textAlignment = .center
+        view.autocapitalizationType = .none
+        view.layer.cornerRadius = 10
         return view
     }()
     
     private lazy var passwordTextField: UITextField = {
         let view = UITextField(frame: .zero)
+        view.backgroundColor =  UIColor(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 0.25)
+        view.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        view.placeholder = "Digite a senha..."
+        view.textAlignment = .center
+        view.autocapitalizationType = .none
+        view.layer.cornerRadius = 10
         return view
     }()
     
     private lazy var loginButton: UIButton = {
         let view = UIButton(frame: .zero)
+        view.setTitle("Acessar", for: .normal)
+        view.backgroundColor = .red
+        view.addTarget(self, action: #selector(login), for: .touchDown)
         return view
     }()
     
@@ -72,22 +87,42 @@ final class LoginViewController: UIViewController {
 
         stackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview().inset(10)
         }
         
-//        loginLabel.snp.makeConstraints { make in
-//            make.centerY.equalToSuperview().inset(100)
-//            make.left.equalToSuperview().offset(10)
-//            make.right.equalToSuperview().inset(10)
-//            make.height.equalTo(40)
-//        }
+        loginLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(40)
+        }
         
-//        passwordLabel.snp.makeConstraints { make in
-//            make.centerY.equalToSuperview().inset(100)
-//            make.right.equalToSuperview().inset(10)
-//            make.left.equalToSuperview().offset(10)
-////            make.width.equalTo(loginLabel.snp.bottom)
-//            make.height.equalTo(40)
-//        }
+        loginTextField.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(40)
+        }
+        
+        passwordLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(40)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(40)
+        }
+        
+        loginButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(40)
+        }
+    }
+    
+    @objc func login() {
+        
     }
 }
